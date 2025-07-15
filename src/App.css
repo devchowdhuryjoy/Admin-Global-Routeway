@@ -1,0 +1,42 @@
+/* -------------------Header And MenuItem Fixed css------------------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  margin-top: 60px; /* Height of the fixed header */
+}
+
+.menu {
+  position: fixed;
+  top: 60px; /* Below the header */
+  bottom: 0;
+  width: 250px; /* Set the width of the menu */
+  overflow-y: auto; /* Allow menu scrolling if needed */
+  background-color: #f8f9fa; /* Background color for the sidebar */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+  flex: 1;
+  margin-left: 250px; /* Match the menu width */
+  overflow-y: auto; /* Enable vertical scrolling for main content */
+  padding: 20px;
+  background-color: #ffffff;
+}
+/* -------------------Header And MenuItem Fixed css------------------- */
+
+
