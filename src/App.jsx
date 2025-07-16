@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import MenuItems from './Components/MenuItem/MenuItems';
-import Homepage from './Components/Homepage/Homepage';
+// import Homepage from './Components/Homepage/Homepage';
 import Calendar from './Components/Calender/Calender';
 import UserList from './Components/Users/UserList';
 
@@ -15,6 +15,7 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import Message from './Components/Message/Message';
 import Notification from './Components/Notification/Notification';
+import AdminReviewForm from './Components/AdminReviewForm/AdminReviewForm';
 
 
 
@@ -69,10 +70,11 @@ function App() {
                     </div>
                     <div className="main">
                       <Routes>
-                        <Route path="/homepage" element={<Homepage />} />
+                        {/* <Route path="/homepage" element={<Homepage />} /> */}
                         <Route path="/calendar" element={<Calendar />} />
                        
                         <Route path="/users" element={<UserList />} />
+                        <Route path="/adminreview" element={<AdminReviewForm />} />
                        
                         <Route path="/chart" element={<Charts />} />
                         <Route path="/messages" element={<Message />} />

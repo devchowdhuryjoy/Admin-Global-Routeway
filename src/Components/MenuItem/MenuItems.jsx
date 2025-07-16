@@ -24,13 +24,26 @@ const items = [
   },
   {
     key: 'sub1',
-    label: 'Users',
+    label: 'User Registration',
     icon: <FaUsers style={{ color: '#106390' }}/>,
     children: [
       {
-        key: '5',
+        key: '1',
         icon: <FaUsers style={{ color: '#106390' }}/>,
-        label: <Link to="/users">User List</Link>,
+        label: <Link to="/users">Register List</Link>,
+      },
+     
+    ],
+  },
+  {
+    key: 'sub2',
+    label: 'AdminReviewForm',
+    icon: <FaUsers style={{ color: '#106390' }}/>,
+    children: [
+      {
+        key: '2',
+        icon: <FaUsers style={{ color: '#106390' }}/>,
+        label: <Link to="/adminreview">Admin Review</Link>,
       },
      
     ],
@@ -57,6 +70,7 @@ const MenuItems = ({ theme, toggleTheme }) => {
   };
 
   return (
+    
     <Layout style={{ minHeight: '100vh', overflow: 'hidden' }}>
       <Layout.Sider
         width={256}
@@ -97,6 +111,11 @@ const MenuItems = ({ theme, toggleTheme }) => {
 };
 
 export default MenuItems;
+
+
+
+
+
 
 
 
