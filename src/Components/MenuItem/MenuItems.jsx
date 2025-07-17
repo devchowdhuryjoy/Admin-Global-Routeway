@@ -28,7 +28,7 @@ const items = [
     icon: <FaUsers style={{ color: '#106390' }}/>,
     children: [
       {
-        key: '1',
+        key: '2',
         icon: <FaUsers style={{ color: '#106390' }}/>,
         label: <Link to="/users">Register List</Link>,
       },
@@ -41,7 +41,7 @@ const items = [
     icon: <FaUsers style={{ color: '#106390' }}/>,
     children: [
       {
-        key: '2',
+        key: '3',
         icon: <FaUsers style={{ color: '#106390' }}/>,
         label: <Link to="/adminreview">Admin Review</Link>,
       },
