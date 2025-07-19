@@ -1,42 +1,34 @@
-
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+
 import MenuItems from './Components/MenuItem/MenuItems';
-// import Homepage from './Components/Homepage/Homepage';
+import Homepage from './Components/Homepage/Homepage';
 import Calendar from './Components/Calender/Calender';
 import UserList from './Components/Users/UserList';
-
 import Charts from './Components/Charts/Charts';
 import Header from './Components/Header/Header';
 
 import LoginPage from './Pages/LoginPage/LoginPage';
-
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import Message from './Components/Message/Message';
 import Notification from './Components/Notification/Notification';
 import AdminReviewForm from './Components/AdminReviewForm/AdminReviewForm';
 
+import useAuth from "./hooks/useAuth";
+import VideoGallery from './Components/VideoGallery/VideoGallery';
 
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
 
 function App() {
-  const [theme, setTheme] = useState('light'); // 'light' or 'dark'
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Authentication state
-
-  const STATIC_EMAIL = 'admin@example.com';
-  const STATIC_PASSWORD = '1234';
-
-  const handleLogin = (email, password) => {
-    if (email === STATIC_EMAIL && password === STATIC_PASSWORD) {
-      setIsAuthenticated(true);
-    } else {
-      alert('Invalid email or password');
-    }
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-  };
+  const [theme, setTheme] = useState('light');
+  const { token, login, logout } = useAuth();
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -44,61 +36,44 @@ function App() {
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 
+  if (!token) {
+    return (
+      <div className={theme}>
+        <Routes>
+          <Route path="/" element={<LoginPage onLogin={login} />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    );
+  }
+
   return (
     <div className={theme}>
-      <Router>
-        <Routes>
-          {!isAuthenticated && (
-            <>
-              <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              
-            </>
-          )}
-
-          {isAuthenticated && (
-            <Route
-              path="/*"
-              element={
-                <div className="">
-                  <div className="header">
-                    <Header toggleTheme={toggleTheme} onLogout={handleLogout} />
-                  </div>
-                  <div className="content">
-                    <div className="menu mt-4">
-                      <MenuItems theme={theme} toggleTheme={toggleTheme} />
-                    </div>
-                    <div className="main">
-                      <Routes>
-                        {/* <Route path="/homepage" element={<Homepage />} /> */}
-                        <Route path="/calendar" element={<Calendar />} />
-                       
-                        <Route path="/users" element={<UserList />} />
-                        <Route path="/adminreview" element={<AdminReviewForm />} />
-                       
-                        <Route path="/chart" element={<Charts />} />
-                        <Route path="/messages" element={<Message />} />
-                        <Route path="/notifications" element={<Notification />} />
-                        
-                        <Route path="*" element={<Navigate to="/homepage" />} />
-                      </Routes>
-                    </div>
-                  </div>
-                </div>
-              }
-            />
-          )}
-
-          {!isAuthenticated && <Route path="*" element={<Navigate to="/" />} />}
-        </Routes>
-      </Router>
+      <Header toggleTheme={toggleTheme} onLogout={logout} />
+      <div className="content">
+        <div className="menu mt-4">
+          <MenuItems theme={theme} toggleTheme={toggleTheme} />
+        </div>
+        <div className="main">
+          <Routes>
+            <Route path="/homepage" element={<Homepage />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/users" element={<UserList />} />
+            <Route path="/adminreview" element={<AdminReviewForm />} />
+            <Route path="/videourl" element={<VideoGallery />} />
+            <Route path="/chart" element={<Charts />} />
+            <Route path="/messages" element={<Message />} />
+            <Route path="/notifications" element={<Notification />} />
+            <Route path="*" element={<Navigate to="/homepage" />} />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
-
-
+export default AppWrapper;
 
 
 
