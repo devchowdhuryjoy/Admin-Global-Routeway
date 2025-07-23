@@ -1,12 +1,11 @@
-
-import { useState } from 'react';
-import { Menu, Layout } from 'antd';
+import { useState } from "react";
+import { Menu, Layout } from "antd";
 import { AiFillHome } from "react-icons/ai";
 import { FaChartLine } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import { GoPackageDependents } from "react-icons/go";
 import { FaUsers } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { TbTableShortcut } from "react-icons/tb";
 import { MdUnsubscribe } from "react-icons/md";
 import { FaRegistered } from "react-icons/fa6";
@@ -18,54 +17,67 @@ import { MdCastConnected } from "react-icons/md";
 
 const items = [
   {
-    key: '1',
-    icon: <AiFillHome style={{ color: '#106390' }}/>,
+    key: "1",
+    icon: <AiFillHome style={{ color: "#106390" }} />,
     label: <Link to="/">Homepage</Link>,
   },
   {
-    key: 'sub1',
-    label: 'User Registration',
-    icon: <FaUsers style={{ color: '#106390' }}/>,
+    key: "sub1",
+    label: "User Registration",
+    icon: <FaUsers style={{ color: "#106390" }} />,
     children: [
       {
-        key: '2',
-        icon: <FaUsers style={{ color: '#106390' }}/>,
+        key: "2",
+        icon: <FaUsers style={{ color: "#106390" }} />,
         label: <Link to="/users">Register List</Link>,
       },
-     
     ],
   },
   {
-    key: 'sub2',
-    label: 'AdminReviewForm',
-    icon: <FaUsers style={{ color: '#106390' }}/>,
+    key: "sub2",
+    label: "AdminReviewForm",
+    icon: <FaUsers style={{ color: "#106390" }} />,
     children: [
       {
-        key: '3',
-        icon: <FaUsers style={{ color: '#106390' }}/>,
+        key: "3",
+        icon: <FaUsers style={{ color: "#106390" }} />,
         label: <Link to="/adminreview">Admin Review</Link>,
       },
-     
     ],
   },
   {
-    key: 'sub3',
-    label: 'Video URL',
-    icon: <FaUsers style={{ color: '#106390' }}/>,
+    key: "sub3",
+    label: "Video URL",
+    icon: <FaUsers style={{ color: "#106390" }} />,
     children: [
       {
-        key: '4',
-        icon: <FaUsers style={{ color: '#106390' }}/>,
+        key: "4",
+        icon: <FaUsers style={{ color: "#106390" }} />,
         label: <Link to="/videourl">Video URL</Link>,
       },
-     
     ],
   },
-  
+  {
+    key: "sub4",
+    label: "Blogs",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "5",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/blogs">Blogs</Link>,
+      },
+      {
+        key: "6",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/blogitem">Blog Item</Link>,
+      },
+    ],
+  },
 ];
 
 const MenuItems = ({ theme, toggleTheme }) => {
-  const [selectedKey, setSelectedKey] = useState('1'); // Store the selected menu key
+  const [selectedKey, setSelectedKey] = useState("1"); // Store the selected menu key
   const [openKeys, setOpenKeys] = useState([]); // Store the open submenu keys
 
   const handleMenuClick = (e) => {
@@ -83,17 +95,16 @@ const MenuItems = ({ theme, toggleTheme }) => {
   };
 
   return (
-    
-    <Layout style={{ minHeight: '100vh', overflow: 'hidden' }}>
+    <Layout style={{ minHeight: "100vh", overflow: "hidden" }}>
       <Layout.Sider
         width={256}
         theme={theme}
         style={{
-          background: theme === 'dark' ? '#001529' : '#fff',
-          transition: 'all 0.3s ease-in-out',
-          position: 'sticky',
-          height: '100vh',
-          overflowY: 'auto',
+          background: theme === "dark" ? "#001529" : "#fff",
+          transition: "all 0.3s ease-in-out",
+          position: "sticky",
+          height: "100vh",
+          overflowY: "auto",
         }}
       >
         {/* Menu with items */}
@@ -108,9 +119,9 @@ const MenuItems = ({ theme, toggleTheme }) => {
             icon: (
               <div
                 className={`transition-transform duration-300 flex justify-center items-center ${
-                  selectedKey === item.key ? 'scale-125 text-custom-blue' : ''
+                  selectedKey === item.key ? "scale-125 text-custom-blue" : ""
                 }`}
-                style={{ fontSize: '20px' }}
+                style={{ fontSize: "20px" }}
               >
                 {item.icon}
               </div>
@@ -124,14 +135,3 @@ const MenuItems = ({ theme, toggleTheme }) => {
 };
 
 export default MenuItems;
-
-
-
-
-
-
-
-
-
-
-

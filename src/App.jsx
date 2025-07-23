@@ -1,22 +1,30 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
+import { useState } from "react";
 
-import MenuItems from './Components/MenuItem/MenuItems';
-import Homepage from './Components/Homepage/Homepage';
-import Calendar from './Components/Calender/Calender';
-import UserList from './Components/Users/UserList';
-import Charts from './Components/Charts/Charts';
-import Header from './Components/Header/Header';
+import MenuItems from "./Components/MenuItem/MenuItems";
+import Homepage from "./Components/Homepage/Homepage";
+import Calendar from "./Components/Calender/Calender";
+import UserList from "./Components/Users/UserList";
+import Charts from "./Components/Charts/Charts";
+import Header from "./Components/Header/Header";
 
-import LoginPage from './Pages/LoginPage/LoginPage';
-import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
-import Message from './Components/Message/Message';
-import Notification from './Components/Notification/Notification';
-import AdminReviewForm from './Components/AdminReviewForm/AdminReviewForm';
+import LoginPage from "./Pages/LoginPage/LoginPage";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
+import Message from "./Components/Message/Message";
+import Notification from "./Components/Notification/Notification";
+import AdminReviewForm from "./Components/AdminReviewForm/AdminReviewForm";
 
 import useAuth from "./hooks/useAuth";
-import VideoGallery from './Components/VideoGallery/VideoGallery';
+import VideoGallery from "./Components/VideoGallery/VideoGallery";
+import Blogs from "./Components/Blogs/Blogs";
+import AdminBlogList from "./Components/Blogs/AdminBlogList";
 
 function AppWrapper() {
   return (
@@ -27,13 +35,13 @@ function AppWrapper() {
 }
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
   const { token, login, logout } = useAuth();
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
   if (!token) {
@@ -62,6 +70,8 @@ function App() {
             <Route path="/users" element={<UserList />} />
             <Route path="/adminreview" element={<AdminReviewForm />} />
             <Route path="/videourl" element={<VideoGallery />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogitem" element={<AdminBlogList />} />
             <Route path="/chart" element={<Charts />} />
             <Route path="/messages" element={<Message />} />
             <Route path="/notifications" element={<Notification />} />
@@ -74,9 +84,3 @@ function App() {
 }
 
 export default AppWrapper;
-
-
-
-
-
-
