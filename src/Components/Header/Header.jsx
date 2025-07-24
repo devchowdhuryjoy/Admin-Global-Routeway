@@ -1,15 +1,151 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link } from "react-router-dom";
+// import { useState, useEffect, useRef } from 'react';
+// import { Link } from "react-router-dom";
+// import { MdNotificationsActive, MdDarkMode } from "react-icons/md";
+// import { FaMessage } from "react-icons/fa6";
+// import { useNavigate } from "react-router-dom";
+// import myImage from '../../image/Logo.png';
+// import Swal from "sweetalert2";
+
+// const Header = ({ toggleTheme, onLogout }) => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const menuRef = useRef(null);
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen((prev) => !prev);
+//   };
+
+//   const handleClickOutside = (event) => {
+//     if (menuRef.current && !menuRef.current.contains(event.target)) {
+//       setIsMenuOpen(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => {
+//       document.removeEventListener('mousedown', handleClickOutside);
+//     };
+//   }, []);
+
+//   const navigate = useNavigate();
+
+//   const goToMessages = () => {
+//     navigate("/messages");
+//   };
+
+//   const goToNotifications = () => {
+//     navigate("/notifications");
+//   };
+
+//   const handleLogout = () => {
+//     Swal.fire({
+//       title: 'Are you sure?',
+//       text: "You will be logged out!",
+//       icon: 'warning',
+//       showCancelButton: true,
+//       confirmButtonColor: '#106390',
+//       cancelButtonColor: '#d33',
+//       confirmButtonText: 'Yes, logout',
+//     }).then((result) => {
+//       if (result.isConfirmed) {
+//         onLogout();
+//         Swal.fire('Logged out!', 'You have been logged out.', 'success').then(() => {
+//           navigate("/");
+//         });
+//       }
+//     });
+//   };
+
+//   return (
+//     <header
+//       className={`flex items-center justify-between px-5 py-4 shadow-md font-poppins ${document.documentElement.classList.contains('dark') ? 'bg-[#001529] text-white' : 'bg-white text-black'
+//         }`}
+//     >
+//       {/* Logo Section */}
+//       <div className="flex-1 flex items-center">
+//         <Link to="/" className="cursor-pointer">
+//           <img
+//             src={myImage}
+//             alt="Finwise Logo"
+//             className="w-32 h-auto" // Adjust logo size
+//           />
+//         </Link>
+//       </div>
+
+//       {/* Right Section */}
+//       <div className="flex items-center space-x-4 ml-4">
+//         {/* Dark Mode Toggle */}
+//         <button
+//           onClick={toggleTheme}
+//           className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
+//         >
+//           <MdDarkMode className="text-[#106390] dark:text-[#f7941d]" />
+//         </button>
+
+//         {/* Messages Icon */}
+//         <button
+//           onClick={goToMessages}
+//           className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
+//         >
+//           <FaMessage className="text-[#106390] dark:text-[#f7941d]" />
+//         </button>
+
+//         {/* Notifications Icon */}
+//         <button
+//           onClick={goToNotifications}
+//           className="relative p-3 bg-gray-200 rounded-full hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
+//         >
+//           <MdNotificationsActive className="text-[#106390] dark:text-[#f7941d]" />
+//         </button>
+
+//         {/* Profile Menu */}
+//         <div className="relative" ref={menuRef}>
+//           <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleMenu}>
+//             <img
+//               src="/src/image/man-with-photo-camera-his-holidays.jpg"
+//               alt="Profile"
+//               className="w-10 h-10 rounded-full"
+//             />
+//             <div>
+//               <h2 className="text-sm font-medium text-gray-700 dark:text-white">Chowdhury JOY</h2>
+//               <p className="text-xs text-gray-500 dark:text-gray-400">Full Stack Developer</p>
+//             </div>
+//           </div>
+
+//           {/* Dropdown menu */}
+//           {isMenuOpen && (
+//             <div className="absolute bg-[#106390] shadow-lg rounded-lg p-7 mt-5 right-4">
+//               <ul>
+//                 <li className="p-2 text-white cursor-pointer">My Profile</li>
+//                 <li className="p-2 text-white cursor-pointer">Setting</li>
+//                 <li
+//                   className="p-2 text-white cursor-pointer hover:underline"
+//                   onClick={handleLogout}
+//                 >
+//                   Logout
+//                 </li>
+//               </ul>
+//             </div>
+//           )}
+//         </div>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { MdNotificationsActive, MdDarkMode } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
-import myImage from '../../image/Logo.png';
 import Swal from "sweetalert2";
-
+import myImage from "../../image/Logo.png";
 
 const Header = ({ toggleTheme, onLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -22,57 +158,50 @@ const Header = ({ toggleTheme, onLogout }) => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  const navigate = useNavigate();
-
-  const goToMessages = () => {
-    navigate("/messages");
-  };
-
-  const goToNotifications = () => {
-    navigate("/notifications");
-  };
-
+  const goToMessages = () => navigate("/messages");
+  const goToNotifications = () => navigate("/notifications");
 
   const handleLogout = () => {
     Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: "You will be logged out!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#106390',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, logout',
+      confirmButtonColor: "#106390",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout",
     }).then((result) => {
       if (result.isConfirmed) {
         onLogout();
-        Swal.fire('Logged out!', 'You have been logged out.', 'success').then(() => {
-          navigate("/");
-        });
+        Swal.fire("Logged out!", "You have been logged out.", "success").then(
+          () => {
+            navigate("/");
+          }
+        );
       }
     });
   };
 
-
-
   return (
     <header
-      className={`flex items-center justify-between px-5 py-4 shadow-md font-poppins ${document.documentElement.classList.contains('dark') ? 'bg-[#001529] text-white' : 'bg-white text-black'
+      // 🔧 Sticky Header styling added here
+      className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-5 py-4 shadow-md font-poppins 
+        ${
+          document.documentElement.classList.contains("dark")
+            ? "bg-[#001529] text-white"
+            : "bg-white text-black"
         }`}
     >
       {/* Logo Section */}
       <div className="flex-1 flex items-center">
         <Link to="/" className="cursor-pointer">
-          <img
-            src={myImage}
-            alt="Finwise Logo"
-            className="w-32 h-auto" // Adjust logo size
-          />
+          <img src={myImage} alt="Finwise Logo" className="w-32 h-auto" />
         </Link>
       </div>
 
@@ -104,15 +233,22 @@ const Header = ({ toggleTheme, onLogout }) => {
 
         {/* Profile Menu */}
         <div className="relative" ref={menuRef}>
-          <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleMenu}>
+          <div
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={toggleMenu}
+          >
             <img
               src="/src/image/man-with-photo-camera-his-holidays.jpg"
               alt="Profile"
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="text-sm font-medium text-gray-700 dark:text-white">Chowdhury JOY</h2>
-              <p className="text-xs text-gray-500 dark:text-gray-400">Full Stack Developer</p>
+              <h2 className="text-sm font-medium text-gray-700 dark:text-white">
+                Chowdhury JOY
+              </h2>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                Full Stack Developer
+              </p>
             </div>
           </div>
 
@@ -138,12 +274,3 @@ const Header = ({ toggleTheme, onLogout }) => {
 };
 
 export default Header;
-
-
-
-
-
-
-
-
-
