@@ -25,6 +25,7 @@ import useAuth from "./hooks/useAuth";
 import VideoGallery from "./Components/VideoGallery/VideoGallery";
 import Blogs from "./Components/Blogs/Blogs";
 import AdminBlogList from "./Components/Blogs/AdminBlogList";
+import ReviewTwo from "./Components/ReviewTwo/ReviewTwo";
 
 function AppWrapper() {
   return (
@@ -69,6 +70,7 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/adminreview" element={<AdminReviewForm />} />
+            <Route path="/reviewtwo" element={<ReviewTwo />} />
             <Route path="/videourl" element={<VideoGallery />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogitem" element={<AdminBlogList />} />

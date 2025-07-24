@@ -74,6 +74,18 @@ const items = [
       },
     ],
   },
+  {
+    key: "sub5",
+    label: "ReviewTwo",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "7",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/reviewtwo">Review Two</Link>,
+      },
+    ],
+  },
 ];
 
 const MenuItems = ({ theme, toggleTheme }) => {
