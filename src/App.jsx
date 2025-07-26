@@ -26,6 +26,7 @@ import VideoGallery from "./Components/VideoGallery/VideoGallery";
 import Blogs from "./Components/Blogs/Blogs";
 import AdminBlogList from "./Components/Blogs/AdminBlogList";
 import ReviewTwo from "./Components/ReviewTwo/ReviewTwo";
+import Nursing from "./Components/Course/Nursing";
 
 function AppWrapper() {
   return (
@@ -74,6 +75,7 @@ function App() {
             <Route path="/videourl" element={<VideoGallery />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogitem" element={<AdminBlogList />} />
+            <Route path="/nursing" element={<Nursing />} />
             <Route path="/chart" element={<Charts />} />
             <Route path="/messages" element={<Message />} />
             <Route path="/notifications" element={<Notification />} />

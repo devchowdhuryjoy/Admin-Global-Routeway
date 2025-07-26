@@ -86,6 +86,18 @@ const items = [
       },
     ],
   },
+  {
+    key: "sub6",
+    label: "Course",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "8",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/nursing">Nursing</Link>,
+      },
+    ],
+  },
 ];
 
 const MenuItems = ({ theme, toggleTheme }) => {

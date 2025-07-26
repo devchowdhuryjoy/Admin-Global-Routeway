@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Swal from 'sweetalert2';
-import BASE_URL from '../../ApiBaseUrl/BaseUrl';
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import BASE_URL from "../../ApiBaseUrl/BaseUrl";
 
 const AdminReviewForm = () => {
-  const [name, setName] = useState('');
-  const [reviewText, setReviewText] = useState('');
-  const [rating, setRating] = useState('');
+  const [name, setName] = useState("");
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState("");
   const [imageFile, setImageFile] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -13,9 +13,9 @@ const AdminReviewForm = () => {
 
     if (!name || !reviewText || !rating || !imageFile) {
       Swal.fire({
-        icon: 'warning',
-        title: 'Please fill all fields!',
-        confirmButtonColor: '#3085d6'
+        icon: "warning",
+        title: "Please fill all fields!",
+        confirmButtonColor: "#3085d6",
       });
       return;
     }
@@ -36,34 +36,38 @@ const AdminReviewForm = () => {
       console.log(result);
 
       Swal.fire({
-        icon: 'success',
-        title: 'Review submitted successfully!',
+        icon: "success",
+        title: "Review submitted successfully!",
         showConfirmButton: false,
-        timer: 1800
+        timer: 1800,
       });
 
-      setName('');
-      setReviewText('');
-      setRating('');
+      setName("");
+      setReviewText("");
+      setRating("");
       setImageFile(null);
     } catch (error) {
       console.error("Error:", error);
       Swal.fire({
-        icon: 'error',
-        title: 'Failed to submit review.',
-        confirmButtonColor: '#d33'
+        icon: "error",
+        title: "Failed to submit review.",
+        confirmButtonColor: "#d33",
       });
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
-      <h2 className="text-3xl font-semibold mb-6 text-gray-800">Submit a Review</h2>
+    <div className=" p-6 bg-white rounded-2xl shadow-md mt-10">
+      <h2 className="text-3xl font-semibold mb-6 text-gray-800">
+        Submit a Review
+      </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Name
+          </label>
           <input
             type="text"
             value={name}
@@ -75,7 +79,9 @@ const AdminReviewForm = () => {
 
         {/* Review */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Review</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Review
+          </label>
           <textarea
             value={reviewText}
             onChange={(e) => setReviewText(e.target.value)}
@@ -87,7 +93,9 @@ const AdminReviewForm = () => {
 
         {/* Rating */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Rating (1 to 5)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Rating (1 to 5)
+          </label>
           <input
             type="number"
             value={rating}
@@ -101,7 +109,9 @@ const AdminReviewForm = () => {
 
         {/* Image */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Upload Image</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Upload Image
+          </label>
           <input
             type="file"
             accept="image/*"

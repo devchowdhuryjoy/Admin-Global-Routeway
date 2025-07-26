@@ -1,19 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
-        'custom-blue': '#106390',
+        "custom-blue": "#106390",
       },
     },
   },
-  plugins: [],
-  darkMode: 'class', // Enable dark mode via class
-}
-
+  plugins: [require("@tailwindcss/typography")], // <-- here, at root level
+  darkMode: "class", // Enable dark mode via class
+};
