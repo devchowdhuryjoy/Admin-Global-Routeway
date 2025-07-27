@@ -27,6 +27,15 @@ import Blogs from "./Components/Blogs/Blogs";
 import AdminBlogList from "./Components/Blogs/AdminBlogList";
 import ReviewTwo from "./Components/ReviewTwo/ReviewTwo";
 import Nursing from "./Components/Course/Nursing";
+import NursingEditDelete from "./Components/Course/NursingEditDelete";
+import Accounting from "./Components/Accounting Course/Accounting";
+import AccountingEditDelete from "./Components/Accounting Course/AccountingEditDelete";
+import Engineering from "./Components/Engineering/Engineering";
+import EngineeringEditDelete from "./Components/Engineering/EngineeringEditDelete";
+import FoodHospital from "./Components/Food & Hospital/FoodHospital";
+import FoodHospitalEditDelete from "./Components/Food & Hospital/FoodHospitalEditDelete";
+import BusinessStudies from "./Components/Business Studies/BusinessStudies";
+import BusinessStudiesEditDelete from "./Components/Business Studies/BusinessStudiesEditDelete";
 
 function AppWrapper() {
   return (
@@ -76,6 +85,27 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogitem" element={<AdminBlogList />} />
             <Route path="/nursing" element={<Nursing />} />
+            <Route path="/accounting" element={<Accounting />} />
+            <Route path="/engineering" element={<Engineering />} />
+            <Route path="/foodandhospitality" element={<FoodHospital />} />
+            <Route path="/businessstudies" element={<BusinessStudies />} />
+            <Route path="/nursingeditdelete" element={<NursingEditDelete />} />
+            <Route
+              path="/businessstudieseditdelete"
+              element={<BusinessStudiesEditDelete />}
+            />
+            <Route
+              path="/foodandhospitalityeditdelete"
+              element={<FoodHospitalEditDelete />}
+            />
+            <Route
+              path="/engineeringeditdelete"
+              element={<EngineeringEditDelete />}
+            />
+            <Route
+              path="/accountingeditdelete"
+              element={<AccountingEditDelete />}
+            />
             <Route path="/chart" element={<Charts />} />
             <Route path="/messages" element={<Message />} />
             <Route path="/notifications" element={<Notification />} />

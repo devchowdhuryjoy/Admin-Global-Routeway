@@ -88,13 +88,96 @@ const items = [
   },
   {
     key: "sub6",
-    label: "Course",
+    label: "Nursing Course",
     icon: <FaUsers style={{ color: "#106390" }} />,
     children: [
       {
         key: "8",
         icon: <FaUsers style={{ color: "#106390" }} />,
         label: <Link to="/nursing">Nursing</Link>,
+      },
+      {
+        key: "9",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/nursingeditdelete">Nursing Edit & Delete</Link>,
+      },
+    ],
+  },
+  {
+    key: "sub7",
+    label: "Accounting Course",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "10",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/accounting">Accounting</Link>,
+      },
+      {
+        key: "11",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/accountingeditdelete">Accounting Edit & Delete</Link>,
+      },
+    ],
+  },
+  {
+    key: "sub8",
+    label: "Engineering Course",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "12",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/engineering">Engineering</Link>,
+      },
+      {
+        key: "13",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: (
+          <Link to="/engineeringeditdelete">Engineering Edit & Delete</Link>
+        ),
+      },
+    ],
+  },
+  {
+    key: "sub9",
+    label: "Food and Hospitality Course",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "14",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/foodandhospitality">Food and Hospitality</Link>,
+      },
+      {
+        key: "15",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: (
+          <Link to="/foodandhospitalityeditdelete">
+            Food Hospitality Edit & Delete
+          </Link>
+        ),
+      },
+    ],
+  },
+  {
+    key: "sub10",
+    label: "Business Studies Course",
+    icon: <FaUsers style={{ color: "#106390" }} />,
+    children: [
+      {
+        key: "16",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: <Link to="/businessstudies">Business Studies</Link>,
+      },
+      {
+        key: "17",
+        icon: <FaUsers style={{ color: "#106390" }} />,
+        label: (
+          <Link to="/businessstudieseditdelete">
+            Business Studies Edit & Delete
+          </Link>
+        ),
       },
     ],
   },

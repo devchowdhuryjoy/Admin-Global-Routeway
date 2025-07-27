@@ -57,7 +57,7 @@ const AdminReviewForm = () => {
   };
 
   return (
-    <div className=" p-6 bg-white rounded-2xl shadow-md mt-10">
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
       <h2 className="text-3xl font-semibold mb-6 text-gray-800">
         Submit a Review
       </h2>

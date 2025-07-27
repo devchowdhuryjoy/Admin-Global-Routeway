@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -7,6 +7,6 @@ export default defineConfig({
 
   server: {
     host: true, // Allow access from external devices on the network
-    port: 3000, // Optional: You can change the port if needed
+    port: 30001, // Optional: You can change the port if needed
   },
-})
+});
