@@ -14,6 +14,179 @@ import { GiPodiumSecond } from "react-icons/gi";
 import { FaDrupal } from "react-icons/fa";
 import { PiContactlessPaymentFill } from "react-icons/pi";
 import { MdCastConnected } from "react-icons/md";
+import { FaUserPlus, FaChalkboardTeacher, FaVideo, FaBlog, FaEdit } from "react-icons/fa";
+import { MdReviews } from "react-icons/md";
+import { GiNurseFemale, GiGearHammer, GiCook, GiBriefcase } from "react-icons/gi";
+
+
+// const items = [
+//   {
+//     key: "1",
+//     icon: <AiFillHome style={{ color: "#106390" }} />,
+//     label: <Link to="/">Homepage</Link>,
+//   },
+//   {
+//     key: "sub1",
+//     label: "User Registration",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "2",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/users">Register List</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub2",
+//     label: "AdminReviewForm",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "3",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/adminreview">Admin Review</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub3",
+//     label: "Video URL",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "4",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/videourl">Video URL</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub4",
+//     label: "Blogs",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "5",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/blogs">Blogs</Link>,
+//       },
+//       {
+//         key: "6",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/blogitem">Blog Item</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub5",
+//     label: "ReviewTwo",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "7",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/reviewtwo">Review Two</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub6",
+//     label: "Nursing Course",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "8",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/nursing">Nursing</Link>,
+//       },
+//       {
+//         key: "9",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/nursingeditdelete">Nursing Edit & Delete</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub7",
+//     label: "Accounting Course",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "10",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/accounting">Accounting</Link>,
+//       },
+//       {
+//         key: "11",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/accountingeditdelete">Accounting Edit & Delete</Link>,
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub8",
+//     label: "Engineering Course",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "12",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/engineering">Engineering</Link>,
+//       },
+//       {
+//         key: "13",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: (
+//           <Link to="/engineeringeditdelete">Engineering Edit & Delete</Link>
+//         ),
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub9",
+//     label: "Food and Hospitality Course",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "14",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/foodandhospitality">Food and Hospitality</Link>,
+//       },
+//       {
+//         key: "15",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: (
+//           <Link to="/foodandhospitalityeditdelete">
+//             Food Hospitality Edit & Delete
+//           </Link>
+//         ),
+//       },
+//     ],
+//   },
+//   {
+//     key: "sub10",
+//     label: "Business Studies Course",
+//     icon: <FaUsers style={{ color: "#106390" }} />,
+//     children: [
+//       {
+//         key: "16",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: <Link to="/businessstudies">Business Studies</Link>,
+//       },
+//       {
+//         key: "17",
+//         icon: <FaUsers style={{ color: "#106390" }} />,
+//         label: (
+//           <Link to="/businessstudieseditdelete">
+//             Business Studies Edit & Delete
+//           </Link>
+//         ),
+//       },
+//     ],
+//   },
+// ];
+
 
 const items = [
   {
@@ -24,11 +197,11 @@ const items = [
   {
     key: "sub1",
     label: "User Registration",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <FaUserPlus style={{ color: "#106390" }} />,
     children: [
       {
         key: "2",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaUserPlus style={{ color: "#106390" }} />,
         label: <Link to="/users">Register List</Link>,
       },
     ],
@@ -36,11 +209,11 @@ const items = [
   {
     key: "sub2",
     label: "AdminReviewForm",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <MdReviews style={{ color: "#106390" }} />,
     children: [
       {
         key: "3",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <MdReviews style={{ color: "#106390" }} />,
         label: <Link to="/adminreview">Admin Review</Link>,
       },
     ],
@@ -48,11 +221,11 @@ const items = [
   {
     key: "sub3",
     label: "Video URL",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <FaVideo style={{ color: "#106390" }} />,
     children: [
       {
         key: "4",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaVideo style={{ color: "#106390" }} />,
         label: <Link to="/videourl">Video URL</Link>,
       },
     ],
@@ -60,16 +233,16 @@ const items = [
   {
     key: "sub4",
     label: "Blogs",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <FaBlog style={{ color: "#106390" }} />,
     children: [
       {
         key: "5",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaBlog style={{ color: "#106390" }} />,
         label: <Link to="/blogs">Blogs</Link>,
       },
       {
         key: "6",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#106390" }} />,
         label: <Link to="/blogitem">Blog Item</Link>,
       },
     ],
@@ -77,11 +250,11 @@ const items = [
   {
     key: "sub5",
     label: "ReviewTwo",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <MdReviews style={{ color: "#106390" }} />,
     children: [
       {
         key: "7",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <MdReviews style={{ color: "#106390" }} />,
         label: <Link to="/reviewtwo">Review Two</Link>,
       },
     ],
@@ -89,16 +262,16 @@ const items = [
   {
     key: "sub6",
     label: "Nursing Course",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <GiNurseFemale style={{ color: "#106390" }} />,
     children: [
       {
         key: "8",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <GiNurseFemale style={{ color: "#106390" }} />,
         label: <Link to="/nursing">Nursing</Link>,
       },
       {
         key: "9",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#106390" }} />,
         label: <Link to="/nursingeditdelete">Nursing Edit & Delete</Link>,
       },
     ],
@@ -106,16 +279,16 @@ const items = [
   {
     key: "sub7",
     label: "Accounting Course",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <FaChalkboardTeacher style={{ color: "#106390" }} />,
     children: [
       {
         key: "10",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaChalkboardTeacher style={{ color: "#106390" }} />,
         label: <Link to="/accounting">Accounting</Link>,
       },
       {
         key: "11",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#106390" }} />,
         label: <Link to="/accountingeditdelete">Accounting Edit & Delete</Link>,
       },
     ],
@@ -123,35 +296,33 @@ const items = [
   {
     key: "sub8",
     label: "Engineering Course",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <GiGearHammer style={{ color: "#106390" }} />,
     children: [
       {
         key: "12",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <GiGearHammer style={{ color: "#106390" }} />,
         label: <Link to="/engineering">Engineering</Link>,
       },
       {
         key: "13",
-        icon: <FaUsers style={{ color: "#106390" }} />,
-        label: (
-          <Link to="/engineeringeditdelete">Engineering Edit & Delete</Link>
-        ),
+        icon: <FaEdit style={{ color: "#106390" }} />,
+        label: <Link to="/engineeringeditdelete">Engineering Edit & Delete</Link>,
       },
     ],
   },
   {
     key: "sub9",
     label: "Food and Hospitality Course",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <GiCook style={{ color: "#106390" }} />,
     children: [
       {
         key: "14",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <GiCook style={{ color: "#106390" }} />,
         label: <Link to="/foodandhospitality">Food and Hospitality</Link>,
       },
       {
         key: "15",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#106390" }} />,
         label: (
           <Link to="/foodandhospitalityeditdelete">
             Food Hospitality Edit & Delete
@@ -163,16 +334,16 @@ const items = [
   {
     key: "sub10",
     label: "Business Studies Course",
-    icon: <FaUsers style={{ color: "#106390" }} />,
+    icon: <GiBriefcase style={{ color: "#106390" }} />,
     children: [
       {
         key: "16",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <GiBriefcase style={{ color: "#106390" }} />,
         label: <Link to="/businessstudies">Business Studies</Link>,
       },
       {
         key: "17",
-        icon: <FaUsers style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#106390" }} />,
         label: (
           <Link to="/businessstudieseditdelete">
             Business Studies Edit & Delete
@@ -182,6 +353,7 @@ const items = [
     ],
   },
 ];
+
 
 const MenuItems = ({ theme, toggleTheme }) => {
   const [selectedKey, setSelectedKey] = useState("1"); // Store the selected menu key
