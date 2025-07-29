@@ -36,6 +36,12 @@ import FoodHospital from "./Components/Food & Hospital/FoodHospital";
 import FoodHospitalEditDelete from "./Components/Food & Hospital/FoodHospitalEditDelete";
 import BusinessStudies from "./Components/Business Studies/BusinessStudies";
 import BusinessStudiesEditDelete from "./Components/Business Studies/BusinessStudiesEditDelete";
+import SuccessReviewPost from "./Components/AdminReviewForm/SuccessReviewPost";
+import StudentsEditDelete from "./Components/ReviewTwo/StudentsEditDelete";
+import CreateCollaboration from "./Components/Collaboration/CreateCollaboration";
+import ManageCollaborations from "./Components/Collaboration/ManageCollaborations";
+import CreateLeadership from "./Components/Leadership/CreateLeadership";
+import EditDeleteLeadership from "./Components/Leadership/EditDeleteLeadership";
 
 function AppWrapper() {
   return (
@@ -80,7 +86,9 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/adminreview" element={<AdminReviewForm />} />
+            <Route path="/successeditdelete" element={<SuccessReviewPost />} />
             <Route path="/reviewtwo" element={<ReviewTwo />} />
+            <Route path="/studentsrevieweditdelete" element={<StudentsEditDelete />} />
             <Route path="/videourl" element={<VideoGallery />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogitem" element={<AdminBlogList />} />
@@ -105,6 +113,22 @@ function App() {
             <Route
               path="/accountingeditdelete"
               element={<AccountingEditDelete />}
+            />
+            <Route
+              path="/collaboration"
+              element={<CreateCollaboration />}
+            />
+            <Route
+              path="/collaborationeditdelete"
+              element={<ManageCollaborations />}
+            />
+            <Route
+              path="/leadership"
+              element={<CreateLeadership />}
+            />
+            <Route
+              path="/leadershipeditdelete"
+              element={<EditDeleteLeadership />}
             />
             <Route path="/chart" element={<Charts />} />
             <Route path="/messages" element={<Message />} />
