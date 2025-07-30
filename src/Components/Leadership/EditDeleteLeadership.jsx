@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BASE_URL from "../../ApiBaseUrl/BaseUrl";
 import IMAGE_BASE_URL from "../../ApiBaseUrl/ImageBaseUrl";
 import Swal from "sweetalert2";
+import JoditEditor from "jodit-react";
 
 const EditDeleteLeadership = () => {
   const [items, setItems] = useState([]);
@@ -126,7 +127,7 @@ const EditDeleteLeadership = () => {
               <label className="block text-sm font-semibold mb-2">
                 Description
               </label>
-              <textarea
+              {/* <textarea
                 name="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -134,7 +135,11 @@ const EditDeleteLeadership = () => {
                 className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400"
                 placeholder="Write description with bullet points, etc."
                 required
-              ></textarea>
+              ></textarea> */}
+              <JoditEditor
+                value={description}
+                onChange={(newContent) => setDescription(newContent)}
+              />
             </div>
 
             <div>
@@ -184,7 +189,12 @@ const EditDeleteLeadership = () => {
                 <td className="px-4 py-2 border">{item.id}</td>
                 <td className="px-4 py-2 border">{item.name}</td>
                 <td className="px-4 py-2 border">{item.title}</td>
-                <td className="px-4 py-2 border">{item.description}</td>
+                {/* <td className="px-4 py-2 border">{item.description}</td> */}
+                <td
+                  className="px-4 py-2 border"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                ></td>
+
                 <td className="px-4 py-2 border">
                   {item.image && (
                     <img
