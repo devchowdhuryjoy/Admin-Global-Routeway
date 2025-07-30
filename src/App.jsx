@@ -42,6 +42,7 @@ import CreateCollaboration from "./Components/Collaboration/CreateCollaboration"
 import ManageCollaborations from "./Components/Collaboration/ManageCollaborations";
 import CreateLeadership from "./Components/Leadership/CreateLeadership";
 import EditDeleteLeadership from "./Components/Leadership/EditDeleteLeadership";
+import ProfileCard from "./Pages/ProfileCard";
 
 function AppWrapper() {
   return (
@@ -129,6 +130,10 @@ function App() {
             <Route
               path="/leadershipeditdelete"
               element={<EditDeleteLeadership />}
+            />
+            <Route
+              path="/profile"
+              element={<ProfileCard />}
             />
             <Route path="/chart" element={<Charts />} />
             <Route path="/messages" element={<Message />} />

@@ -51,6 +51,10 @@ const Header = ({ toggleTheme, onLogout }) => {
     });
   };
 
+    const handleGoToProfile = () => {
+    navigate("/Profile"); // 🔹 Navigate to /profile route
+  };
+
   return (
     <header
       // 🔧 Sticky Header styling added here
@@ -119,7 +123,12 @@ const Header = ({ toggleTheme, onLogout }) => {
           {isMenuOpen && (
             <div className="absolute bg-[#106390] shadow-lg rounded-lg p-7 mt-5 right-4">
               <ul>
-                <li className="p-2 text-white cursor-pointer">My Profile</li>
+                <li
+                  className="p-2 text-white cursor-pointer"
+                  onClick={handleGoToProfile} // 🔹 Add onClick handler
+                >
+                  My Profile
+                </li>
                 <li className="p-2 text-white cursor-pointer">Setting</li>
                 <li
                   className="p-2 text-white cursor-pointer hover:underline"
