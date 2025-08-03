@@ -67,7 +67,7 @@ const Message = () => {
           className="flex-1 border rounded-lg p-2 focus:outline-none"
           placeholder="Type a message"
         />
-        <button className="ml-3 bg-[#106390] text-white px-4 py-2 rounded-lg">
+        <button className="ml-3 bg-[#f16f22] text-white px-4 py-2 rounded-lg">
           Send
         </button>
       </div>

@@ -24,34 +24,47 @@ import { MdOutlineLeaderboard } from "react-icons/md";
 const items = [
   {
     key: "1",
-    icon: <AiFillHome style={{ color: "#106390" }} />,
+    icon: <AiFillHome style={{ color: "#f16f22" }} />,
     label: <Link to="/">Homepage</Link>,
   },
   {
     key: "sub1",
     label: "User Registration",
-    icon: <FaUserPlus style={{ color: "#106390" }} />,
+    icon: <FaUserPlus style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "2",
-        icon: <FaUserPlus style={{ color: "#106390" }} />,
+        icon: <FaUserPlus style={{ color: "#f16f22" }} />,
         label: <Link to="/users">Register List</Link>,
+      },
+    ],
+  },
+
+    {
+    key: "sub14",
+    label: "Country Registration",
+    icon: <FaUserPlus style={{ color: "#f16f22" }} />,
+    children: [
+      {
+        key: "25",
+        icon: <FaUserPlus style={{ color: "#f16f22" }} />,
+        label: <Link to="/countrylist">Country Register List</Link>,
       },
     ],
   },
   {
     key: "sub2",
     label: "Success Review",
-    icon: <MdReviews style={{ color: "#106390" }} />,
+    icon: <MdReviews style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "3",
-        icon: <MdReviews style={{ color: "#106390" }} />,
+        icon: <MdReviews style={{ color: "#f16f22" }} />,
         label: <Link to="/adminreview">Success Review Create</Link>,
       },
       {
         key: "18",
-        icon: <MdReviews style={{ color: "#106390" }} />,
+        icon: <MdReviews style={{ color: "#f16f22" }} />,
         label: <Link to="/successeditdelete">Success Edit Delete</Link>,
       },
     ],
@@ -59,11 +72,11 @@ const items = [
   {
     key: "sub3",
     label: "Video URL",
-    icon: <FaVideo style={{ color: "#106390" }} />,
+    icon: <FaVideo style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "4",
-        icon: <FaVideo style={{ color: "#106390" }} />,
+        icon: <FaVideo style={{ color: "#f16f22" }} />,
         label: <Link to="/videourl">Video URL</Link>,
       },
     ],
@@ -71,16 +84,16 @@ const items = [
   {
     key: "sub4",
     label: "Blogs",
-    icon: <FaBlog style={{ color: "#106390" }} />,
+    icon: <FaBlog style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "5",
-        icon: <FaBlog style={{ color: "#106390" }} />,
+        icon: <FaBlog style={{ color: "#f16f22" }} />,
         label: <Link to="/blogs">Blogs</Link>,
       },
       {
         key: "6",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: <Link to="/blogitem">Blog Item</Link>,
       },
     ],
@@ -88,16 +101,16 @@ const items = [
   {
     key: "sub5",
     label: "Students Review",
-    icon: <MdReviews style={{ color: "#106390" }} />,
+    icon: <MdReviews style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "7",
-        icon: <MdReviews style={{ color: "#106390" }} />,
+        icon: <MdReviews style={{ color: "#f16f22" }} />,
         label: <Link to="/reviewtwo">Students Review Create</Link>,
       },
       {
         key: "19",
-        icon: <MdReviews style={{ color: "#106390" }} />,
+        icon: <MdReviews style={{ color: "#f16f22" }} />,
         label: <Link to="/studentsrevieweditdelete">Students Edit Delete</Link>,
       },
     ],
@@ -105,16 +118,16 @@ const items = [
   {
     key: "sub6",
     label: "Nursing Course",
-    icon: <GiNurseFemale style={{ color: "#106390" }} />,
+    icon: <GiNurseFemale style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "8",
-        icon: <GiNurseFemale style={{ color: "#106390" }} />,
+        icon: <GiNurseFemale style={{ color: "#f16f22" }} />,
         label: <Link to="/nursing">Nursing</Link>,
       },
       {
         key: "9",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: <Link to="/nursingeditdelete">Nursing Edit & Delete</Link>,
       },
     ],
@@ -122,16 +135,16 @@ const items = [
   {
     key: "sub7",
     label: "Accounting Course",
-    icon: <FaChalkboardTeacher style={{ color: "#106390" }} />,
+    icon: <FaChalkboardTeacher style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "10",
-        icon: <FaChalkboardTeacher style={{ color: "#106390" }} />,
+        icon: <FaChalkboardTeacher style={{ color: "#f16f22" }} />,
         label: <Link to="/accounting">Accounting</Link>,
       },
       {
         key: "11",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: <Link to="/accountingeditdelete">Accounting Edit & Delete</Link>,
       },
     ],
@@ -139,16 +152,16 @@ const items = [
   {
     key: "sub8",
     label: "Engineering Course",
-    icon: <GiGearHammer style={{ color: "#106390" }} />,
+    icon: <GiGearHammer style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "12",
-        icon: <GiGearHammer style={{ color: "#106390" }} />,
+        icon: <GiGearHammer style={{ color: "#f16f22" }} />,
         label: <Link to="/engineering">Engineering</Link>,
       },
       {
         key: "13",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: <Link to="/engineeringeditdelete">Engineering Edit & Delete</Link>,
       },
     ],
@@ -156,16 +169,16 @@ const items = [
   {
     key: "sub9",
     label: "Food and Hospitality Course",
-    icon: <GiCook style={{ color: "#106390" }} />,
+    icon: <GiCook style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "14",
-        icon: <GiCook style={{ color: "#106390" }} />,
+        icon: <GiCook style={{ color: "#f16f22" }} />,
         label: <Link to="/foodandhospitality">Food and Hospitality</Link>,
       },
       {
         key: "15",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: (
           <Link to="/foodandhospitalityeditdelete">
             Food Hospitality Edit & Delete
@@ -177,16 +190,16 @@ const items = [
   {
     key: "sub10",
     label: "Business Studies Course",
-    icon: <GiBriefcase style={{ color: "#106390" }} />,
+    icon: <GiBriefcase style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "16",
-        icon: <GiBriefcase style={{ color: "#106390" }} />,
+        icon: <GiBriefcase style={{ color: "#f16f22" }} />,
         label: <Link to="/businessstudies">Business Studies</Link>,
       },
       {
         key: "17",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: (
           <Link to="/businessstudieseditdelete">
             Business Studies Edit & Delete
@@ -199,16 +212,16 @@ const items = [
    {
     key: "sub12",
     label: "Collaboration",
-    icon: <FcCollaboration style={{ color: "#106390" }} />,
+    icon: <FcCollaboration style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "21",
-        icon: <FcCollaboration style={{ color: "#106390" }} />,
+        icon: <FcCollaboration style={{ color: "#f16f22" }} />,
         label: <Link to="/collaboration">Create Collaboration</Link>,
       },
       {
         key: "22",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: (
           <Link to="/collaborationeditdelete">
             Collaboration Edit & Delete
@@ -220,16 +233,16 @@ const items = [
    {
     key: "sub13",
     label: "Leadership",
-    icon: <MdOutlineLeaderboard style={{ color: "#106390" }} />,
+    icon: <MdOutlineLeaderboard style={{ color: "#f16f22" }} />,
     children: [
       {
         key: "23",
-        icon: <MdOutlineLeaderboard style={{ color: "#106390" }} />,
+        icon: <MdOutlineLeaderboard style={{ color: "#f16f22" }} />,
         label: <Link to="/leadership">Create Leadership</Link>,
       },
       {
         key: "24",
-        icon: <FaEdit style={{ color: "#106390" }} />,
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
         label: (
           <Link to="/leadershipeditdelete">
             Leadership Edit & Delete

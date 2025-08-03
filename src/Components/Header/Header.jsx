@@ -5,7 +5,7 @@ import { FaMessage } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import myImage from "../../image/Logo.png";
 
-const Header = ({ toggleTheme, onLogout }) => {
+const Header = ({  toggleTheme, onLogout, profileName, profileImage  }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Header = ({ toggleTheme, onLogout }) => {
       text: "You will be logged out!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#106390",
+      confirmButtonColor: "#f16f22",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, logout",
     }).then((result) => {
@@ -51,7 +51,7 @@ const Header = ({ toggleTheme, onLogout }) => {
     });
   };
 
-    const handleGoToProfile = () => {
+  const handleGoToProfile = () => {
     navigate("/Profile"); // 🔹 Navigate to /profile route
   };
 
@@ -79,7 +79,7 @@ const Header = ({ toggleTheme, onLogout }) => {
           onClick={toggleTheme}
           className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
-          <MdDarkMode className="text-[#106390] dark:text-[#f7941d]" />
+          <MdDarkMode className="text-[#f16f22] dark:text-[#f7941d]" />
         </button>
 
         {/* Messages Icon */}
@@ -87,7 +87,7 @@ const Header = ({ toggleTheme, onLogout }) => {
           onClick={goToMessages}
           className="p-3 bg-gray-200 rounded-full hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
-          <FaMessage className="text-[#106390] dark:text-[#f7941d]" />
+          <FaMessage className="text-[#f16f22] dark:text-[#f7941d]" />
         </button>
 
         {/* Notifications Icon */}
@@ -95,7 +95,7 @@ const Header = ({ toggleTheme, onLogout }) => {
           onClick={goToNotifications}
           className="relative p-3 bg-gray-200 rounded-full hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
-          <MdNotificationsActive className="text-[#106390] dark:text-[#f7941d]" />
+          <MdNotificationsActive className="text-[#f16f22] dark:text-[#f7941d]" />
         </button>
 
         {/* Profile Menu */}
@@ -119,9 +119,9 @@ const Header = ({ toggleTheme, onLogout }) => {
             </div>
           </div>
 
-          {/* Dropdown menu */}
+        
           {isMenuOpen && (
-            <div className="absolute bg-[#106390] shadow-lg rounded-lg p-7 mt-5 right-4">
+            <div className="absolute bg-[#f16f22] shadow-lg rounded-lg p-7 mt-5 right-4">
               <ul>
                 <li
                   className="p-2 text-white cursor-pointer"
@@ -140,6 +140,9 @@ const Header = ({ toggleTheme, onLogout }) => {
             </div>
           )}
         </div>
+
+        
+
       </div>
     </header>
   );

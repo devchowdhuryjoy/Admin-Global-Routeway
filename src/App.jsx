@@ -42,7 +42,7 @@ import CreateCollaboration from "./Components/Collaboration/CreateCollaboration"
 import ManageCollaborations from "./Components/Collaboration/ManageCollaborations";
 import CreateLeadership from "./Components/Leadership/CreateLeadership";
 import EditDeleteLeadership from "./Components/Leadership/EditDeleteLeadership";
-import ProfileCard from "./Pages/ProfileCard";
+import CountryList from "./Components/Users/CountryList";
 
 function AppWrapper() {
   return (
@@ -56,11 +56,16 @@ function App() {
   const [theme, setTheme] = useState("light");
   const { token, login, logout } = useAuth();
 
+ 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
+
+
+  
+
 
   if (!token) {
     return (
@@ -76,7 +81,9 @@ function App() {
 
   return (
     <div className={theme}>
+
       <Header toggleTheme={toggleTheme} onLogout={logout} />
+     
       <div className="content">
         <div className="menu mt-4">
           <MenuItems theme={theme} toggleTheme={toggleTheme} />
@@ -86,6 +93,7 @@ function App() {
             <Route path="/homepage" element={<Homepage />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/users" element={<UserList />} />
+            <Route path="/countrylist" element={<CountryList />} />
             <Route path="/adminreview" element={<AdminReviewForm />} />
             <Route path="/successeditdelete" element={<SuccessReviewPost />} />
             <Route path="/reviewtwo" element={<ReviewTwo />} />
@@ -131,10 +139,8 @@ function App() {
               path="/leadershipeditdelete"
               element={<EditDeleteLeadership />}
             />
-            <Route
-              path="/profile"
-              element={<ProfileCard />}
-            />
+             
+
             <Route path="/chart" element={<Charts />} />
             <Route path="/messages" element={<Message />} />
             <Route path="/notifications" element={<Notification />} />

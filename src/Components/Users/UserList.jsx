@@ -121,7 +121,7 @@ const UserList = () => {
       <div>
         {/* Searchbar (optional) */}
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-4xl font-semibold text-black-600 text-[#106390] pl-5">
+          <h3 className="text-4xl font-semibold text-black-600 text-[#f16f22] pl-5">
             Register List
           </h3>
           {/* Add your search form here if needed */}
@@ -142,7 +142,7 @@ const UserList = () => {
               />
               <button
                 type="submit"
-                className="text-white absolute right-2.5 bottom-2.5 bg-[#106390] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#106390] dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white absolute right-2.5 bottom-2.5 bg-[#f16f22] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#f16f22] dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Search
               </button>
@@ -247,7 +247,7 @@ const UserList = () => {
               onClick={() => handlePageChange(i + 1)}
               className={`px-4 py-2 mx-1 rounded ${
                 currentPage === i + 1
-                  ? "bg-[#106390] text-white"
+                  ? "bg-[#f16f22] text-white"
                   : "bg-gray-200 text-gray-700"
               }`}
             >
