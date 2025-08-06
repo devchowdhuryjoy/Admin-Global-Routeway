@@ -43,6 +43,9 @@ import ManageCollaborations from "./Components/Collaboration/ManageCollaboration
 import CreateLeadership from "./Components/Leadership/CreateLeadership";
 import EditDeleteLeadership from "./Components/Leadership/EditDeleteLeadership";
 import CountryList from "./Components/Users/CountryList";
+import ScholarshipList from "./Components/Users/ScholarshipList";
+import CreateVisa from "./Components/VisaSuccess/CreateVisa";
+import EditDeleteVisa from "./Components/VisaSuccess/EditDeleteVisa";
 
 function AppWrapper() {
   return (
@@ -94,6 +97,7 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/countrylist" element={<CountryList />} />
+            <Route path="/scholarshiplist" element={<ScholarshipList />} />
             <Route path="/adminreview" element={<AdminReviewForm />} />
             <Route path="/successeditdelete" element={<SuccessReviewPost />} />
             <Route path="/reviewtwo" element={<ReviewTwo />} />
@@ -138,6 +142,14 @@ function App() {
             <Route
               path="/leadershipeditdelete"
               element={<EditDeleteLeadership />}
+            />
+            <Route
+              path="/visasuccess"
+              element={<CreateVisa />}
+            />
+            <Route
+              path="/visasuccesseditdelete"
+              element={<EditDeleteVisa />}
             />
              
 

@@ -52,6 +52,18 @@ const items = [
       },
     ],
   },
+    {
+    key: "sub15",
+    label: "Scholarship Registration",
+    icon: <FaUserPlus style={{ color: "#f16f22" }} />,
+    children: [
+      {
+        key: "26",
+        icon: <FaUserPlus style={{ color: "#f16f22" }} />,
+        label: <Link to="/scholarshiplist">Scholarship Register List</Link>,
+      },
+    ],
+  },
   {
     key: "sub2",
     label: "Success Review",
@@ -246,6 +258,28 @@ const items = [
         label: (
           <Link to="/leadershipeditdelete">
             Leadership Edit & Delete
+          </Link>
+        ),
+      },
+    ],
+  },
+
+    {
+    key: "sub16",
+    label: "Visa Success",
+    icon: <MdOutlineLeaderboard style={{ color: "#f16f22" }} />,
+    children: [
+      {
+        key: "27",
+        icon: <MdOutlineLeaderboard style={{ color: "#f16f22" }} />,
+        label: <Link to="/visasuccess">Create Visa Success</Link>,
+      },
+      {
+        key: "28",
+        icon: <FaEdit style={{ color: "#f16f22" }} />,
+        label: (
+          <Link to="/visasuccesseditdelete">
+            Visa Success Edit & Delete
           </Link>
         ),
       },
