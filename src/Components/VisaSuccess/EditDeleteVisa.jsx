@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BASE_URL from "../../ApiBaseUrl/BaseUrl";
-import IMAGE_BASE_URL from "../../ApiBaseUrl/ImageBaseUrl";
+// import IMAGE_BASE_URL from "../../ApiBaseUrl/ImageBaseUrl";
+import ImageBaseurl from "../../ApiBaseUrl/ImageBaseurl";
 import Swal from "sweetalert2";
 
 const EditDeleteVisa = () => {
@@ -118,7 +119,8 @@ const EditDeleteVisa = () => {
               />
               {editItem.image && (
                 <img
-                  src={`${IMAGE_BASE_URL}${editItem.image}`}
+                  // src={`${IMAGE_BASE_URL}${editItem.image}`}
+                  src={`${ImageBaseurl}${editItem.image.startsWith("/") ? editItem.image.substring(1) : editItem.image}`}
                   alt="Current"
                   className="w-24 h-24 rounded mt-2 object-cover"
                 />
@@ -153,7 +155,8 @@ const EditDeleteVisa = () => {
                 <td className="px-4 py-2 border">
                   {item.image && (
                     <img
-                      src={`${IMAGE_BASE_URL}${item.image}`}
+                      // src={`${IMAGE_BASE_URL}${item.image}`}
+                      src={`${ImageBaseurl}${item.image.startsWith("/") ? item.image.substring(1) : item.image}`}
                       alt="Visa"
                       className="w-16 h-16 object-cover rounded-md"
                     />

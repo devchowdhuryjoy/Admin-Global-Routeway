@@ -20,6 +20,7 @@ const SuccessReviewPost = () => {
       const res = await fetch(`${BASE_URL}reviewget`);
       const data = await res.json();
       setReviews(data);
+      
     } catch (err) {
       console.error("Fetch error:", err);
     }

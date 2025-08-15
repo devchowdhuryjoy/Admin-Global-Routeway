@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import JoditEditor from "jodit-react";
 import BASE_URL from "../../ApiBaseUrl/BaseUrl";
-import IMAGE_BASE_URL from "../../ApiBaseUrl/ImageBaseUrl";
+// import IMAGE_BASE_URL from "../../ApiBaseUrl/ImageBaseUrl";
+import ImageBaseurl from "../../ApiBaseUrl/ImageBaseurl";
 import Swal from "sweetalert2";
 
 const AccountingEditDelete = () => {
@@ -103,7 +104,8 @@ const AccountingEditDelete = () => {
   const handleEdit = (item) => {
     setFormData({ text: item.text, content: item.content });
     setEditId(item.id);
-    setPreviewImage(`${IMAGE_BASE_URL}${item.image}`);
+    // setPreviewImage(`${IMAGE_BASE_URL}${item.image}`);
+    setPreviewImage(`${ImageBaseurl}${item.image.startsWith("/") ? item.image.substring(1) : item.image}`);
     setImage(null);
   };
 
@@ -151,7 +153,8 @@ const AccountingEditDelete = () => {
                 <td className="border px-3 py-2">
                   {item.image && (
                     <img
-                      src={`${IMAGE_BASE_URL}${item.image}`}
+                      // src={`${IMAGE_BASE_URL}${item.image}`}
+                      src={`${ImageBaseurl}${item.image.startsWith("/") ? item.image.substring(1) : item.image}`}
                       alt="thumbnail"
                       className="w-16 h-16 object-cover"
                     />
