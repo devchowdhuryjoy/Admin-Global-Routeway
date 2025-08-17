@@ -101,9 +101,9 @@ const CountryList = () => {
               </td>
             </tr>
           ) : (
-            currentItems.map((user) => (
+            currentItems.map((user, index) => (
               <tr key={user.id} className="odd:bg-white even:bg-gray-50 hover:bg-gray-100">
-                <td className="border border-gray-300 px-4 py-2">{user.id}</td>
+                <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
                 <td className="border border-gray-300 px-4 py-2">{user.name}</td>
                 <td className="border border-gray-300 px-4 py-2">{user.email}</td>
                 <td className="border border-gray-300 px-4 py-2">{user.country}</td>
@@ -142,3 +142,9 @@ const CountryList = () => {
 };
 
 export default CountryList;
+
+
+
+
+
+
